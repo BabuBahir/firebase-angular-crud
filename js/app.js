@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'firebase']);
+var app = angular.module('myApp', ['ngRoute', 'firebase', 'ngStorage']);
 
 app.config(function($routeProvider){
   $routeProvider
@@ -21,5 +21,5 @@ app.config(function($routeProvider){
 });
 
 app.constant("FBURL", 
-  "https://test-55ef7.firebaseio.com/products/" //Use the URL of your project here
+  "https://test-55ef7.firebaseio.com/Questions/" //Use the URL of your project here
 );
