@@ -21,5 +21,5 @@ app.config(function($routeProvider){
 });
 
 app.constant("FBURL", 
-  "https://ang-crud.firebaseio.com/products/" //Use the URL of your project here
+  "https://test-55ef7.firebaseio.com/products/" //Use the URL of your project here
 );
