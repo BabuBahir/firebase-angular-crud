@@ -1,3 +1,10 @@
+ 
+<div ng-hide="isFormOpen">
+	Enter Name : <input type="text" ng-model="username">  
+	<button class="btn btn-success" ng-click="isFormOpen = !isFormOpen">Reply</button>
+</div>
+
+<div ng-init="isFormOpen = false" ng-show="isFormOpen">
 <table class="table" >
   <caption class="lead">Products</caption>
   <thead>
@@ -28,5 +35,6 @@
   <!-- <a href="#/add" class="btn btn-success" role="button">Add New Product</a> -->
 </p>
 
+</div>
  
 
