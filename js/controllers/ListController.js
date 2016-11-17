@@ -1,7 +1,8 @@
-app.controller('ListController', ['$scope', '$firebaseArray','$location', '$firebaseObject', 'FBURL', function($scope, $firebaseArray, $location,$firebaseObject, FBURL){
+app.controller('ListController', ['$scope', '$firebaseArray','$location', '$firebaseObject', 'FBURL',function($scope, $firebaseArray, $location,$firebaseObject, FBURL,$localStorage){
   
   var products = new Firebase(FBURL);
   $scope.products = $firebaseArray(products);
+  
    //detecting input
 	$scope.newValue = function(value) {
 		$scope.value=value;		 
@@ -9,14 +10,13 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
    //adding responses
    
    $scope.addProduct = function() {
-	    $scope.counter = $scope.counter + 1;
+	    $scope.counter = $scope.counter + 1; 		
 		 if($scope.counter >= $scope.products.length)
-		 {		
-			 alert('Thankyou !!!');
-			 $location.path('/add');			 
+		 {						 
+			 $location.path('/end');			 
 		 };
-		var ref1 = new Firebase("https://test-55ef7.firebaseio.com/Response/");
-		var response = $firebaseArray(ref1);
+		var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
+		var response = $firebaseArray(ref);
 		response.$add({
 			QuestionID: $scope.counter,
 			ResponseID: $scope.value,
@@ -25,7 +25,8 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 		// after response nullify $scope.value
 			$scope.value = false;
 	};
-   
+	
+ 
 }]);
 
  

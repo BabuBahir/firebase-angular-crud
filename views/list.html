@@ -6,7 +6,9 @@
 
 <div ng-init="isFormOpen = false" ng-show="isFormOpen">
 <table class="table" >
-  <caption class="lead">Products</caption>
+  <caption class="lead">Welcome {{username}} !!
+	<h6> {{products.length -counter}} left</h6>
+  </caption> 
   <thead>
     <tr>
 		<th>Question</th>
@@ -29,8 +31,7 @@
 </table>
 
   <button ng-init="counter = 0" class="btn btn-success" ng-click="addProduct()">Next</button>
-    {{counter}}
-	
+    	
 <p>
   <!-- <a href="#/add" class="btn btn-success" role="button">Add New Product</a> -->
 </p>

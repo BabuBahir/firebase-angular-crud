@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'firebase']);
+var app = angular.module('myApp', ['ngRoute', 'firebase','ngStorage']);
 
 app.config(function($routeProvider){
   $routeProvider
@@ -6,9 +6,9 @@ app.config(function($routeProvider){
 		controller: 'ListController',
 		templateUrl: 'views/list.html'
 	})
-	.when('/add', {
-		controller: 'AddController',
-		templateUrl: 'views/add.html'
+	.when('/end', {
+		controller: 'EndController',
+		templateUrl: 'views/end.html'
 	})
 	.when('/edit/:id', {
 		controller: 'EditController',
