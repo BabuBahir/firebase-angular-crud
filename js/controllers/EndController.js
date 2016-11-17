@@ -1,16 +1,8 @@
-app.controller('EndController', ['$scope', '$firebaseArray', '$location', 'FBURL', function($scope, $firebaseArray, $location, FBURL){
+app.controller('EndController', ['$scope','$firebaseArray','$location','FBURL','$rootScope',function($scope,$firebaseArray, $location,FBURL,$rootScope ){
 	
-	$scope.addProduct = function() {
-		var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
-		var product = $firebaseArray(ref);
-		product.$add({
-			sku: $scope.product.sku,
-			description: $scope.product.description,
-			price: $scope.product.price
-		});
-		$location.path('/');
-	};
-	
+	  $scope.getOrig = function() {
+        return $rootScope.test;
+    };
 }]);
 
 

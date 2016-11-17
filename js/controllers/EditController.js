@@ -1,5 +1,4 @@
-app.controller('EditController', ['$scope','$location', '$routeParams', '$firebaseObject', 'FBURL',   
-    function($scope, $location, $routeParams, $firebaseObject, FBURL){
+app.controller('EditController', ['$scope','$location', '$routeParams', '$firebaseObject', 'FBURL',function($scope, $location, $routeParams, $firebaseObject, FBURL){
     
     var ref = new Firebase(FBURL + $routeParams.id);
 		$scope.product = $firebaseObject(ref);

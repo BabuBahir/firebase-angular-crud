@@ -1,4 +1,4 @@
-app.controller('ListController', ['$scope', '$firebaseArray','$location', '$firebaseObject', 'FBURL',function($scope, $firebaseArray, $location,$firebaseObject, FBURL,$localStorage){
+app.controller('ListController', ['$scope', '$firebaseArray','$location', '$firebaseObject','FBURL','$rootScope',function($scope, $firebaseArray, $location,$firebaseObject, FBURL,$rootScope){
   
   var products = new Firebase(FBURL);
   $scope.products = $firebaseArray(products);
@@ -13,6 +13,9 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 	    $scope.counter = $scope.counter + 1; 		
 		 if($scope.counter >= $scope.products.length)
 		 {						 
+			 // passing name to rootscope
+			 $rootScope.test = $scope.username;
+			 // redirecting
 			 $location.path('/end');			 
 		 };
 		var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");

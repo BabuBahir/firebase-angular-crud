@@ -1,7 +1,11 @@
- 
-<div ng-hide="isFormOpen">
-	Enter Name : <input type="text" ng-model="username">  
-	<button class="btn btn-success" ng-click="isFormOpen = !isFormOpen">Reply</button>
+
+<div ng-hide="isFormOpen"> 
+  <form name="myForm">
+	Enter Name : <input type="text" name="username" ng-model="username" required>  		
+   </form>
+	<div ng-if="myForm.username.$valid">
+		<button class="btn btn-success" ng-click="isFormOpen = !isFormOpen>Reply</button>
+	</div>
 </div>
 
 <div ng-init="isFormOpen = false" ng-show="isFormOpen">
