@@ -29,6 +29,9 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 			$scope.value = false;
 	};
 	
+	$scope.change_formstate = function(){
+		$scope.isFormOpen = true;
+	};
  
 }]);
 
