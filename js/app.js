@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute', 'firebase']);
 
-app.config(function($routeProvider){
+app.config(function($routeProvider,$locationProvider){
   $routeProvider
 	.when('/', {
 		controller: 'ListController',

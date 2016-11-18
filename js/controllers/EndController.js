@@ -4,14 +4,13 @@ app.controller('EndController', ['$scope','$firebaseArray','$firebaseObject','FB
 	var json =[];
 	var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
 	 ref.orderByChild("User").on("child_added", function(snapshot) {
-		var test ={};		 
-		test['a'] = 'test';
-		test['b'] = [];          // Array
-		test['b'].push(snapshot.val().QuestionID);
-		test['b'].push(snapshot.val().ResponseID);
-		test['b'].push(snapshot.val().User);
-		json.push(JSON.stringify(test));	  
-	});
+		var test =[];		 		 
+			          // Array
+			test.push(snapshot.val().QuestionID);
+			test.push(snapshot.val().answer);
+			test.push(snapshot.val().ResponseID);		
+		json.push(test);	  
+	});	 
 	$scope.result=json;
 
 

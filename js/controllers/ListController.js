@@ -10,7 +10,12 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
   
    //detecting input
 	$scope.newValue = function(value) {
-		$scope.value=value;		 
+		if (value === null){
+			$scope.value ='null';
+		}
+		else{ 
+		    $scope.value=value;		 
+		}
 	};
  
    //adding responses   
@@ -26,9 +31,9 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 		var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
 		var response = $firebaseArray(ref);
 		response.$add({
-			QuestionID: $scope.counter,
+			QuestionID: $scope.products[$scope.counter-1].ques,
 			ResponseID: $scope.value,
-			User: $scope.username
+			answer: $scope.products[$scope.counter-1].answer
 		});	
 		// after response nullify $scope.value
 			$scope.value = false;
