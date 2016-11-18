@@ -8,12 +8,12 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
     var allResponse = $firebaseObject(ref)
     allResponse.$remove(); 
   
-  //detecting input
+   //detecting input
 	$scope.newValue = function(value) {
 		$scope.value=value;		 
 	};
-   //adding responses
-   
+ 
+   //adding responses   
    $scope.addProduct = function() {
 	    $scope.counter = $scope.counter + 1; 		
 		 if($scope.counter >= $scope.products.length)

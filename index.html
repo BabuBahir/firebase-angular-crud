@@ -18,14 +18,10 @@
         
 		<!-- AngularFire -->
         <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-	
-        <!--Storage-->	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-	 
+ 
     </head>
 	
-	<body ng-app="myApp">
-			
+	<body ng-app="myApp">			 
 			<!-- Navbar -->
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 			  <div class="container">
@@ -35,12 +31,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				  </button>
-				  <a class="navbar-brand" href="#/">Ang-CRUD</a>
+				  </button>				  
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 				  <ul class="nav navbar-nav">
-					<li><a href="#/">Home</a></li>
+					<li>
+					<a href="#" onClick="window.location.reload();return false;">Restart</a>
+					</li>
 				  </ul>
 				</div><!--/.nav-collapse -->
 			  </div>
@@ -58,8 +55,6 @@
 
 			<!-- Controllers -->
 			<script src="js/controllers/ListController.js"></script>	
-			<script src="js/controllers/AddController.js"></script> 	
-			<script src="js/controllers/EditController.js"></script> 
 			<script src="js/controllers/EndController.js"></script> 		
 		</body>
 	</html>

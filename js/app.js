@@ -9,12 +9,7 @@ app.config(function($routeProvider){
 	.when('/end', {
 		controller: 'EndController',
 		templateUrl: 'views/end.html'
-	})
-	.when('/edit/:id', {
-		controller: 'EditController',
-		templateUrl: 'views/edit.html'
-	
-	})
+	}) 
 	.otherwise({
 		redirectTo: '/'
 	});
