@@ -2,7 +2,7 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
   
   var products = new Firebase(FBURL);
   $scope.products = $firebaseArray(products);
-  
+  $scope.btn_class = "btn btn-danger";
   //deleting previous response
     var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
     var allResponse = $firebaseObject(ref)
@@ -15,6 +15,7 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 		}
 		else{ 
 		    $scope.value=value;		 
+			$scope.btn_class = "btn btn-success";
 		}
 	};
  
@@ -33,10 +34,12 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
 		response.$add({
 			QuestionID: $scope.products[$scope.counter-1].ques,
 			ResponseID: $scope.value,
-			answer: $scope.products[$scope.counter-1].answer
+			answer: $scope.products[$scope.counter-1].answer,
+			username : $scope.username
 		});	
 		// after response nullify $scope.value
 			$scope.value = false;
+			$scope.btn_class = "btn btn-danger";
 	};
 	
 	$scope.change_formstate = function(){

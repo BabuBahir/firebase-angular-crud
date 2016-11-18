@@ -15,7 +15,7 @@
    
   <div class="row">
     <div class="btn pull-right"> 
-  <button ng-init="counter = 0" class="btn btn-success" ng-click="addProduct()">Next</button>
+  <button ng-init="counter = 0" ng-class="btn_class" ng-click="addProduct()">Next</button>
   </div>
   </div>
   
@@ -23,19 +23,23 @@
 
   <thead>
     <tr>
-		<th>Question</th>
-		<th>Option 1</th>
-		<th>Option 2</th>
-		<th>Option 3</th> 
-		<th>Option 4</th>	 
+		<th>Question</th>		  
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>{{products[counter].ques}} ?</td>
+    </tr>
+	<tr>
       <td><input type="radio" ng-model="value"  value="1" ng-change='newValue(value)'>			  	  {{products[counter].opt1}} </input></td>
+    </tr>
+	<tr>
        <td><input type="radio" ng-model="value" value="2" ng-change='newValue(value)'>			  	 {{products[counter].opt2}} </input></td>	 
+    </tr>
+	<tr>
        <td><input type="radio" ng-model="value" value="3" ng-change='newValue(value)'>			  	 {{products[counter].opt3}} </input></td> 
+    </tr>
+	<tr>
 	   <td><input type="radio" ng-model="value" value="4" ng-change='newValue(value)'>			  	 {{products[counter].opt4}} </input></td>	 	  
     </tr>
   </tbody>
