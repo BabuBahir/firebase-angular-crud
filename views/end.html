@@ -1,15 +1,13 @@
  
-<div  class="well">Thank you {{getOrig()}} !!! ... Correct Response are in Green</div>
+<div class="well">Thank you {{getOrig()}} !!! ... Correct Response are in Green</div>
 
- <ul  style="list-style: none;">
+ <ul class="container" style="list-style: none;">
   <li ng-repeat="x in result">
-    <div ng-style="myStyle" align="centre" style="font-size:180%" ng-if="x[1]==x[2]">		 
-	     <div ng-init="myStyle={background:'rgb(50, 251, 50)'}"></div>
-		 {{x[0]}}           
+    <div  align="centre" ng-if="x[1]==x[2]">		 
+	    {{x[0]}} ?<span class="glyphicon glyphicon-ok"></span>
     </div>
-	<div ng-style="myStyle" align="centre" style="font-size:180%" ng-if="x[1]!=x[2]">
-		<div ng-init="myStyle={background:'rgb(242, 110, 133)'}"></div>
-		 {{x[0]}}          
+	<div align="centre" ng-if="x[1]!=x[2]">
+		{{x[0]}} ?<span class="glyphicon glyphicon-remove"></span>          
     </div>
   </li>
 </ul>

@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute', 'firebase']);
 
-app.config(function($routeProvider,$locationProvider){
+app.config(function($routeProvider ){
   $routeProvider
 	.when('/', {
 		controller: 'ListController',
@@ -13,6 +13,7 @@ app.config(function($routeProvider,$locationProvider){
 	.otherwise({
 		redirectTo: '/'
 	});
+ 
 });
 
 app.constant("FBURL", 
