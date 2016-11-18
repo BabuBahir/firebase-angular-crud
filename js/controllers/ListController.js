@@ -3,7 +3,12 @@ app.controller('ListController', ['$scope', '$firebaseArray','$location', '$fire
   var products = new Firebase(FBURL);
   $scope.products = $firebaseArray(products);
   
-   //detecting input
+  //deleting previous response
+    var ref = new Firebase("https://test-55ef7.firebaseio.com/Response/");
+    var allResponse = $firebaseObject(ref)
+    allResponse.$remove(); 
+  
+  //detecting input
 	$scope.newValue = function(value) {
 		$scope.value=value;		 
 	};
